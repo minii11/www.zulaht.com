@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ZULHAT</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Poppins:wght@200;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+<!-- Navbar Start -->
+<div class="container-fluid sticky-top" style="background-color: black !important;">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light p-0" style="background-color: black !important;">
+            <a href="index.html" class="navbar-brand">
+                <h2 style="color: gold;">ZULHAT</h2>
+            </a>
+            <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon" style="filter: invert(100%);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto">
+                    <a href="index.html" class="nav-item nav-link" style="color: gold;">Home</a>
+                    <a href="about.html" class="nav-item nav-link" style="color: gold;">About</a>
+                    <a href="product.html" class="nav-item nav-link" style="color: gold;">Products</a>
+                    
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color: gold;">Pages</a>
+                        <div class="dropdown-menu mt-2" style="background-color: black !important;">
+                            <a href="feature.html" class="dropdown-item" style="color: gold;">Features</a>
+                            <a href="how-to-use.html" class="dropdown-item" style="color: gold;">How To Use</a>
+                            <a href="testimonial.html" class="dropdown-item" style="color: gold;">Testimonial</a>
+                        </div>
+                    </div>
+
+                    <a href="contact.html" class="nav-item nav-link" style="color: gold;">Contact</a>
+                </div>
+                <a href="" class="btn py-2 px-4 d-none d-lg-inline-block" style="background-color: gold; color: black;">Shop Now</a>
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- Navbar End -->
+
+<!-- Hero Start -->
+<div class="container-fluid hero-header mb-5" style="background-color: black;">
+    <div class="container text-center">
+        <h1 class="display-4 mb-3 animated slideInDown" style="color: gold;">Products</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center mb-0 animated slideInDown">
+                <li class="breadcrumb-item"><a href="#" style="color: gold;">Home</a></li>
+                <li class="breadcrumb-item"><a href="#" style="color: gold;">Pages</a></li>
+                <li class="breadcrumb-item active" aria-current="page" style="color: gold;">Product</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Hero End -->
+
+
+<style>
+.hero-header {
+    background: black !important;
+    background-image: none !important;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: gold !important;
+}
+</style>
+
+
+
+<style>
+
+
+/* Icon shape when clicked */
+.live-visitor-badge.clicked {
+    padding: 5px; /* Adjust padding for icon shape */
+    border-radius: 50%; /* Make it circular */
+    font-size: 12px; /* Keep the font size for visibility */
+    width: 40px; /* Fixed width for icon */
+    height: 40px; /* Fixed height for icon */
+    justify-content: center; /* Center the content */
+}
+
+/* Responsive adjustments for mobile */
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+    /* --- LIVE PURCHASE NOTIFICATION --- */
+    .live-notification {
+    position: fixed;
+    left: -400px; /* Hidden initially */
+    top: 20px;
+    background: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-left: 4px solid #ffca1a;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    z-index: 10000; /* High z-index to appear above other elements */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 320px;
+    transition: left 0.5s ease-in-out;
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) { /* Adjust based on your breakpoint */
+        top: 70px; /* Position it lower to avoid overlapping with the cart icon */
+        left: 20px; /* Adjust left position for better visibility */
+    }
+}
+
+/* To ensure cart icon isn't hidden */
+.cart-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10001; /* Ensure it's above the notification */
+}
+
+    .notification-img {
+        width: 55px;
+        height: 55px;
+        border-radius: 10px;
+        object-fit: cover;
+        border: 2px solid #ffca1a;
+        background: #fff;
+    }
+
+    .notification-content h4 {
+        margin: 0;
+        font-size: 14px;
+        color: #1a1a1a;
+        font-weight: bold;
+    }
+
+    .notification-content p {
+        margin: 3px 0 0;
+        font-size: 12px;
+        color: #666;
+    }
+
+    .notification-content span {
+        color: #ffca1a;
+        font-weight: bold;
+    }
+
+    /* Animation Classes */
+    .notification-show {
+        left: 20px;
+    }
+
+    .notification-hide {
+        left: -400px;
+    }
+</style>
+
+
+
+<!-- SOUND EFFECT (Hidden) -->
+<audio id="notificationSound" preload="auto">
+    <source src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  
+    // --- CUSTOMER NAMES (85% Female, 15% Male - Realistic Pakistani Names, NO "Bibi") ---
+    const customerNames = [
+        // Female Names (No "Bibi")
+   "Muneeba Rizvi", "Hafsa Malik", "Kiran Shakir", "Mahnoor Sheikh", "Amina Raza", "Saira Ali", "Bushra Anwar", "Zohra Khan", "Ayesha Khan",
+"Fatima Ali",
+"Zara Ahmed",
+"Sana Iqbal",
+"Alina Shaikh",
+"Sofia Qureshi",
+"Hina Malik",
+"Amina Raza",
+"Maria Farooq",
+"Jannat Hussain",
+"Tasnim Siddiqui",
+"Noor Sadiq",
+"Sidra Bakht",
+"Nida Ashraf",
+"Meher Javed",
+"Areeba Nasir",
+"Sadaf Chaudhry",
+"Iram Ranjha",
+"Hira Malik",
+"Samina Bashir",
+"Rania Tariq",
+"Rashida Zafar",
+"Tasnim Khan",
+"Sania Noor",
+"Kiran Baloch",
+"Rida Feroz",
+"Mahira Ansari",
+"Dua Khawaja",
+"Saira Iftikhar",
+"Faiza Malik",
+"Naila Muneer",
+"Komal Ashraf",
+"Mehak Qadir",
+"Shaista Rauf",
+"Anum Wajid",
+"Natasha Khan",
+"Neelam Rahman",
+"Misha Jamil",
+"Fariha Zain",
+"Anaya Raza","Hafsa Malik",
+"Kiran Shakir",
+"Mahnoor Sheikh",
+"Sadia Noor",
+"Zeenat Ali",
+"Fiza Rahman",
+"Amani Shah",
+"Nadia Khan",
+"Sadia Ashraf",
+"Rabia Qureshi",
+"Zainab Malik",
+"Komal Iftikhar",
+"Esha Tariq",
+"Salma Zafar",
+"Sameera Khan",
+"Ruqayya Ali",
+"Tania Javed",
+"Huma Sadiq",
+"Kashaf Raza","Alysha Noor", "Zara Khan", "Khadija Ansari", "Sofia Malik", "Javeria Khan", "Nazia Ashraf", "Mehak Shah", "Samina Yusuf", "Nadia Parveen", "Rania Iqbal", "Shazia Mansoor", "Uzma Sheikh", "Tanisha Rafiq", "Areeba Khan", "Lubna Farooq", "Saira Javed", "Rukhshan Ahmed", "Dania Ali", "Nadia Malik",
+
+    // Male Names
+    ];
+
+    // --- PRODUCT NAMES ---
+    const productNames = [
+        "24K Gold Skin Polish", "Hand & Foot Cream", "Glow Serum", 
+        "Skin Shiner", "Eyeshadow Palette", "Whitening Cream",
+        "Anti-Aging Cream", "Face Wash", "Lip Gloss", "Highlighter"
+    ];
+
+    // --- PRODUCT IMAGES ---
+    const productImages = [
+        "s1.jpg", "s2.jpg", "s3.jpg", "s4.jpg", "s5.jpg",
+        "hand1.jpg", "serum1.jpg", "eye1.jpg"
+    ];
+
+    // --- LIVE NOTIFICATION FUNCTION ---
+    function showNotification() {
+        const notification = document.getElementById("liveNotification");
+        const notifName = document.getElementById("notifName");
+        const notifProduct = document.getElementById("notifProduct");
+        const notifQty = document.getElementById("notifQty");
+        const notifImg = document.getElementById("notifImg");
+        const notificationSound = document.getElementById("notificationSound");
+  notifName.textContent = ""; 
+        // Random Data
+        const randomName = customerNames[Math.floor(Math.random() * customerNames.length)];
+        const randomProduct = productNames[Math.floor(Math.random() * productNames.length)];
+        const randomQty = Math.floor(Math.random() * 3) + 1; // 1 to 3 items
+        const randomImg = productImages[Math.floor(Math.random() * productImages.length)];
+
+        // Update Content
+        notifName.textContent = randomName;
+        notifProduct.textContent = randomProduct;
+        notifQty.textContent = randomQty;
+        notifImg.src = randomImg;
+
+        // Play Sound (Volume 30%)
+        notificationSound.volume = 1.0;
+        notificationSound.play().catch(e => console.log("Audio play failed:", e));
+
+        // Show Notification
+        notification.classList.remove("notification-hide");
+        notification.classList.add("notification-show");
+
+        // Hide after 3 seconds
+        setTimeout(() => {
+            notification.classList.remove("notification-show");
+            notification.classList.add("notification-hide");
+        }, 4000);
+    }
+
+    // --- LIVE VISITOR COUNTER FUNCTION (Every 4 seconds, change by 1-3) ---
+    let currentVisitors = 43; // Starting number
+    const minVisitors = 20;
+    const maxVisitors = 64;
+
+    function updateVisitorCount() {
+        const visitorCountElement = document.getElementById("visitorCount");
+        
+        // Random change: -3 to +3 visitors (1-3 increase or decrease)
+        const change = Math.floor(Math.random() * 7) - 3;
+        currentVisitors = currentVisitors + change;
+        
+        // Keep within bounds
+        if (currentVisitors < minVisitors) currentVisitors = minVisitors;
+        if (currentVisitors > maxVisitors) currentVisitors = maxVisitors;
+        
+        visitorCountElement.textContent = currentVisitors;
+    }
+
+    // --- NOTIFICATION TIMING (30 sec → 1 min → 3 min → 5 min → repeat) ---
+    const notificationIntervals = [8000,10000,20000,30000,400000,600000,800000,900000,80000,40000,30000,40000, 60000, 80000, 80000, 80000, 80000, 90000]; // 30s, 1m, 3m, 5m
+    let intervalIndex = 0;
+
+    function scheduleNextNotification() {
+        const delay = notificationIntervals[intervalIndex];
+        
+        setTimeout(() => {
+            showNotification();
+            
+            // Move to next interval
+            intervalIndex = (intervalIndex + 1) % notificationIntervals.length;
+            scheduleNextNotification();
+        }, delay);
+    }
+
+    // --- INITIALIZE ---
+    document.addEventListener("DOMContentLoaded", () => {
+        // Start Notifications (first one after 30 seconds)
+        scheduleNextNotification();
+
+        // Update Visitor Count every 4 seconds
+        setInterval(updateVisitorCount, 4000);
+        updateVisitorCount(); // Initial call
+    });
+</script>
+<!-- ================= PREMIUM SHOP SECTION ================= -->
+<div class="mainSection" style="background-color:#2c2c2c; padding:20px;">
+
+  <h2 class="mainHeading" style="color:gold;">Our Items</h2>
+
+  <div class="categoryRow">
+    <div class="categoryItem activeCat" onclick="showProducts('faceShiner',this)" style="color:black;">
+      Polo-Shirts
+    </div>
+  </div>
+
+  <div id="productsContainer" class="productsContainer" style="color:gold;"></div>
+
+</div>
+
+<!-- Floating Cart -->
+<div id="cartIcon" onclick="openCart()">🛒
+  <span id="cartCount">0</span>
+</div>
+
+<!-- CART POPUP -->
+<div id="cartPopup" class="cartPopup" onclick="outsideClose(event)">
+  <div class="cartBox">
+    <span class="closeCart" onclick="closeCart()">×</span>
+    <h3>Your Shopping Cart</h3>
+    <div id="cartItems"></div>
+    <h4 id="cartTotal">Your cart is empty</h4>
+   <button class="checkoutBtn" onclick="openCheckout()">Proceed To Checkout</button>
+  </div>
+</div>
+<!-- ================= CHECKOUT FORM POPUP ================= -->
+<div id="checkoutPopup" class="checkoutPopup">
+  <div class="checkoutBox">
+    <span class="closeCheckout" onclick="closeCheckout()">×</span>
+    <h2>Complete Your Order</h2>
+
+    <div id="orderSummary"></div>
+
+    <input type="text" id="custName" placeholder="Full Name">
+   <input type="tel" 
+       id="custPhone" 
+       placeholder="Enter Phone Number (03XXXXXXXXX)"
+       maxlength="13"
+       required>
+    <input type="text" id="custCity" placeholder="City">
+    <textarea id="custAddress" placeholder="Complete Address"></textarea>
+
+    <select id="paymentMethod">
+      <option value="">Select Payment Method</option>
+      <option value="Cash on Delivery">Cash on Delivery (COD)</option>
+      <option value="Online Payment">Online Payment</option>
+    </select>
+
+    <!-- Premium Complete Order Button -->
+<button class="completeOrderBtn" onclick="showModal()" 
+style="
+background: linear-gradient(135deg,#ffca1a,#ff9800);
+color:#000;
+border:none;
+padding:14px 18px;
+font-size:16px;
+font-weight:700;
+cursor:pointer;
+border-radius:16px;
+margin-top:12px;
+box-shadow:0 10px 25px rgba(255,165,0,0.4);
+transition:0.3s ease;
+width:100%;
+max-width:320px;
+display:block;
+margin-left:auto;
+margin-right:auto;
+letter-spacing:0.5px;
+">
+✨ Complete Order
+</button>
+
+<!-- Premium Modal -->
+<div id="modal" 
+style="
+display:none;
+position:fixed;
+z-index:9999;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.65);
+backdrop-filter:blur(8px);
+justify-content:center;
+align-items:center;
+padding:15px;
+">
+
+<div id="modal-content"
+style="
+background:linear-gradient(145deg,#ffffff,#f9f9ff);
+width:100%;
+max-width:420px;
+border-radius:22px;
+padding:24px;
+box-shadow:0 25px 50px rgba(0,0,0,0.25);
+position:relative;
+font-family:Arial, sans-serif;
+animation:fadeSlide 0.35s ease;
+">
+<!-- Close Button -->
+<span onclick="document.getElementById('modal').style.display='none';" 
+style="
+position: absolute;
+top: 14px;
+right: 16px;
+background: #ffe0e0;
+color: #d60000;
+width: 34px;
+height: 34px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 18px;
+font-weight: bold;
+cursor: pointer;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+">×</span>
+
+<h3 style="
+margin-bottom:22px;
+font-size:21px;
+font-weight:800;
+text-align:center;
+color:#222;
+">
+💬CHOOSE ANY ONE OF THEM!
+</h3>
+
+<!-- Contact 1 -->
+<div style="
+display:flex;
+align-items:flex-start;
+background:linear-gradient(135deg,#fff7e0,#fff1c2);
+padding:16px;
+border-radius:18px;
+margin-bottom:18px;
+box-shadow:0 8px 18px rgba(0,0,0,0.08);
+border:1px solid #ffe6a3;
+">
+
+
+
+<!-- Contact 2 -->
+<div style="
+display:flex;
+align-items:flex-start;
+background:linear-gradient(135deg,#e8f0ff,#d6e4ff);
+padding:16px;
+border-radius:18px;
+box-shadow:0 8px 18px rgba(0,0,0,0.08);
+border:1px solid #c6d8ff;
+">
+
+
+<div style="flex:1;">
+<h4 style="margin:0;font-size:17px;font-weight:700;color:#222;">
+Sardar Muhammad Ali
+<span style="
+background:#ff9800;
+color:white;
+font-size:11px;
+padding:3px 8px;
+border-radius:20px;
+margin-left:6px;
+font-weight:600;
+">Online</span>
+</h4>
+
+<p style="margin:6px 0 6px;font-size:13px;color:#444;font-weight:600;">
+Customer Services Specialist
+</p>
+
+<p style="margin:0 0 10px;font-size:13px;color:#666;line-height:1.4;">
+Order handling specialist ensuring fast responses and smooth checkout assistance.
+</p>
+
+<button onclick="sendToWhatsApp('+923498101583')" 
+style="
+background:linear-gradient(135deg,#25D366,#1ebe5d);
+color:white;
+border:none;
+padding:9px 12px;
+font-size:13px;
+border-radius:10px;
+cursor:pointer;
+font-weight:600;
+width:100%;
+box-shadow:0 5px 12px rgba(37,211,102,0.4);
+">
+Place Order
+</button>
+</div>
+</div>
+
+</div>
+</div>
+
+<script>
+// Function to show the contact options modal
+function showModal() {
+    document.getElementById('modal').style.display = 'flex';
+}
+
+// Function to close the contact options modal
+function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+}
+
+// Function to send a message via WhatsApp
+function sendToWhatsApp(phone) {
+    const message = "Your order message here.";
+    const whatsappURL = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+    window.open(whatsappURL, "_blank");
+    closeModal();
+}
+
+// Better mobile click detection
+document.getElementById("modal").addEventListener("click", function(event) {
+    if (event.target === this) {
+        closeModal();
+    }
+});
+
+// Animation
+const style = document.createElement('style');
+style.innerHTML = `
+@keyframes fadeSlide {
+from {opacity:0; transform:translateY(20px);}
+to {opacity:1; transform:translateY(0);}
+}`;
+document.head.appendChild(style);
+</script>
+  </div>
+</div>
+<!-- THANK YOU POPUP -->
+<div id="thankYouPopup" class="thankYouPopup">
+  <div class="thankYouBox">
+    <h2>Order Placed Successfully!</h2>
+    <p id="thankYouMessage"></p>
+  <button
+    style="
+        background: linear-gradient(to right, #FFD700, #FF8C00); /* Gradient background */
+        color: white;            /* White text */
+        border: none;            /* No border */
+        padding: 12px 24px;      /* Padding for the button */
+        font-size: 18px;         /* Font size */
+        font-weight: bold;       /* Bold text */
+        cursor: pointer;         /* Pointer cursor */
+        border-radius: 25px;     /* More rounded edges */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+        transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+    "
+    onclick="document.getElementById('thankYouPopup').style.display='none'; document.body.style.overflow='auto';">
+    OK
+</button>
+  </div>
+</div>
+<!-- IMAGE MODAL -->
+<div id="imageModal" class="imageModal" onclick="closeModal()">
+  <img id="modalImage">
+</div>
+
+<style>
+body{
+  font-family:'Times New Roman',serif;
+  margin:0;
+  background:#fff;
+}
+.mainSection{
+  padding:30px 15px;
+  text-align:center;
+}
+.mainHeading{
+  font-size:2.3rem;
+  font-weight:700;
+}
+.categoryRow{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+  margin-top:20px;
+}
+.categoryItem{
+  padding:10px 18px;
+  border-radius:30px;
+  border:2px solid #ffca1a;
+  cursor:pointer;
+  font-weight:700;
+  transition:0.3s;
+     font-size: 0.9rem;
+}
+.categoryItem:hover,
+.activeCat{
+  background:#ffca1a;
+    
+}
+/* Container for all products */
+.productsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Always 2 columns */
+    gap: 2px; /* Space between items */
+    padding: 10px;
+    margin-top: 10px;
+    box-sizing: border-box;
+   
+}
+
+/* Each product card */
+.productCard {
+    width: 100%; /* Full width of the grid column */
+    border: 1px solid #ffca1a;
+    border-radius: 15px;
+    padding: 5px;
+    background: #fffdf6;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+      overflow: hidden;
+}
+
+/* Hover effect for cards */
+.productCard:hover {
+    transform: translateY(-5px);
+}
+
+/* Product image - same size, no cropping */
+.productCard img {
+    width: 130%;
+    height: 200px; /* fixed height for uniformity */
+    object-fit: contain; /* keep full image visible without cutting */
+    border-radius: 0px;
+    display: block;
+    cursor: pointer;
+    background-color: #fffdf6; /* optional: fill empty space */
+    margin: -5px 0 5px -5px; /* visually skip the card border */
+    
+}
+
+/* Optional: very small screens */
+@media (max-width: 360px) {
+    .productsContainer {
+        grid-template-columns: 1fr 1fr; /* maintain 2 columns */
+    }
+}
+    .productCard .name {
+    font-size: 0.9rem;}
+.productCard:hover{
+  transform:translateY(-6px);
+}
+
+
+/* FORCE 2 COLUMNS EVEN ON SMALL MOBILE SCREENS */
+@media (max-width: 480px) {
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.originalPrice{
+  text-decoration:line-through;
+  color:#888;
+  font-size:0.9rem;
+}
+.price{
+  color:#d62828;
+  font-weight:700;
+}
+.qtyBox{
+  margin-top:8px;
+}
+.qtyBox input{
+  width:60px;
+  padding:5px;
+  text-align:center;
+}
+.btn{
+  margin-top:6px;
+  padding:6px 10px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:700;
+}
+.addBtn{
+  background:#ffca1a;
+}
+.buyBtn{
+  background:#000;
+  color:#fff;
+}
+.btn:hover{
+  opacity:0.85;
+}
+
+/* CART */
+#cartIcon{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#ffca1a;
+  padding:15px;
+  border-radius:50%;
+  font-size:22px;
+  cursor:pointer;
+  z-index:999;
+}
+#cartCount{
+  position:absolute;
+  top:-5px;
+  right:-5px;
+  background:#000;
+  color:#fff;
+  font-size:12px;
+  padding:3px 6px;
+  border-radius:50%;
+}
+.cartPopup{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.5);
+  justify-content:center;
+  align-items:center;
+  animation:fadeIn 0.3s ease;
+}
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+.cartBox{
+  background:#fff;
+  width:95%;
+  max-width:420px;
+  border-radius:18px;
+  padding:20px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.25);
+  position:relative;
+  animation:slideUp 0.3s ease;
+}
+@keyframes slideUp{
+  from{transform:translateY(30px);opacity:0;}
+  to{transform:translateY(0);opacity:1;}
+}
+.closeCart{
+  position:absolute;
+  right:15px;
+  top:10px;
+  font-size:24px;
+  cursor:pointer;
+}
+.checkoutBtn{
+  width:100%;
+  padding:12px;
+  background:#000;
+  color:#fff;
+  border:none;
+  border-radius:10px;
+  font-weight:700;
+  margin-top:12px;
+}
+
+/* IMAGE MODAL */
+.imageModal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.8);
+  justify-content:center;
+  align-items:center;
+}
+.imageModal img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:12px;
+}
+.deleteBtn{
+  float:right;
+  cursor:pointer;
+  font-size:26px;          /* Bigger size */
+  color:#e63946;
+  background:#ffe5e5;
+  width:38px;
+  height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  transition:all 0.3s ease;
+}
+
+.deleteBtn:hover{
+  background:#e63946;
+  color:#fff;
+  transform:scale(1.15) rotate(-8deg);
+  box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
+.cartItemRow{
+  margin-bottom:12px;
+  padding-bottom:8px;
+  border-bottom:1px solid #eee;
+  text-align:left;
+}.checkoutPopup{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
+  font-family:'Times New Roman',serif;
+}
+
+.checkoutBox{
+   width: 90%; /* Allow for responsive width */
+    max-width: 420px; /* Limit max width on larger screens */
+    background: linear-gradient(135deg, #fff8dc, #ffecb3);
+    padding: 20px; /* Reduced padding for mobile */
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 0.3s ease;
+    max-height: auto; /* Maintain maximum height */
+    overflow-y: auto; /* Enable scrolling */
+}
+
+@keyframes fadeInUp{
+  from{transform:translateY(30px);opacity:0;}
+  to{transform:translateY(0);opacity:1;}
+}
+
+.checkoutBox h2{
+  text-align:center;
+  margin-bottom:15px;
+  font-weight:700;
+}
+
+.checkoutBox input,
+.checkoutBox textarea,
+.checkoutBox select{
+  width:100%;
+  padding:10px;
+  margin-bottom:10px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-family:'Times New Roman',serif;
+    font-size: 1em; /* Use relative font size */
+}
+
+.checkoutBox textarea{
+  resize:none;
+  height:70px;
+}
+
+.completeOrderBtn{
+  width:100%;
+  padding:12px;
+  background:#000;
+  color:#fff;
+  border:none;
+  border-radius:10px;
+  font-weight:700;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.completeOrderBtn:hover{
+  background:#ffca1a;
+  color:#000;
+}
+
+.closeCheckout{
+  float:right;
+  font-size:22px;
+  cursor:pointer;
+}
+
+#orderSummary{
+  background:#fff;
+  padding:10px;
+  border-radius:10px;
+  margin-bottom:10px;
+  font-size:14px;
+  .checkoutPopup{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  justify-content:center;
+  align-items:center;
+  overflow-y:auto;
+  padding:15px;
+}
+
+.checkoutBox{
+  width:100%;
+  max-width:420px;
+  background:#fff8dc;
+  border-radius:20px;
+  max-height:95vh;
+  overflow-y:auto;
+  scroll-behavior:smooth;
+  padding:20px;
+}
+
+/* Sticky Header */
+.checkoutHeader{
+  position:sticky;
+  top:0;
+  background:#fff8dc;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding-bottom:10px;
+  z-index:10;
+}
+
+/* Big Close Button */
+.bigCloseBtn{
+  font-size:22px;
+  background:black;
+  color:white;
+  border:none;
+  border-radius:50%;
+  width:40px;
+  height:40px;
+  cursor:pointer;
+}
+
+.bigCloseBtn:hover{
+  background:#ffca1a;
+  color:black;
+}
+}
+.thankYouPopup{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  justify-content:center;
+  align-items:center;
+  z-index:3000;
+  font-family:'Times New Roman',serif;
+}
+
+.thankYouBox{
+  background:linear-gradient(135deg,#fff8dc,#ffecb3);
+  padding:30px;
+  border-radius:20px;
+  text-align:center;
+  width:90%;
+  max-width:400px;
+  animation:fadeIn 0.3s ease;
+}
+
+.thankYouBox h2{
+  margin-bottom:15px;
+}
+
+.thankYouBox p{
+  margin-bottom:20px;
+  font-size:16px;
+}
+
+.thankYouBox button{
+  padding:10px 25px;
+  border:none;
+  border-radius:8px;
+  background:black;
+  color:white;
+  cursor:pointer;
+}
+
+.thankYouBox button:hover{
+  background:#ffca1a;
+  color:black;
+}
+
+@keyframes fadeIn{
+  from{transform:scale(0.9);opacity:0;}
+  to{transform:scale(1);opacity:1;}
+}
+ .share-btn {
+        background-color: white; /* Grey color */
+        color: black;
+        margin-top: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+    .share-btn:hover { background-color:rgb(222, 168, 4); }
+    .share-icon { font-size: 1.2rem; }
+</style>
+
+
+</div>
+<div id="productsContainer"></div>
+
+<script>
+let cart=[];
+
+const products = {
+    
+    faceShiner: [
+        {name: "<span style='font-size: 0.6rem;'>The Midnight Infinite (Black)</span>", img: "Picx Z/Black.jpeg", price: 3000, original: 3500},
+        {name: "<span style='font-size: 0.6rem;'>The Deep Indus (Navy Blue)</span>", img:"Picx Z/blue.jpeg", price: 3000, original: 3500},
+        {name: "<span style='font-size: 0.6rem;'>The Valley Pearl (White)</span>", img: "Picx Z/white.jpeg", price: 3000, original: 3500 },
+        {name: "<span style='font-size: 0.6rem;'>The Ivory Koel (Cream)</span>", img: "Picx Z/cream.jpeg", price: 3000, original: 3500},
+        
+    ],
+
+};
+
+// Show Products Function
+function showProducts(category, el) {
+    document.querySelectorAll('.categoryItem').forEach(c => c.classList.remove('activeCat'));
+    if (el) el.classList.add('activeCat');
+
+    const container = document.getElementById('productsContainer');
+    container.innerHTML = '';
+    
+    if (!products[category]) {
+        container.innerHTML = '<p>No products found for this category.</p>';
+        return;
+    }
+
+    products[category].forEach((p, i) => {
+        container.innerHTML += `
+        <div class="productCard">
+            <img src="${p.img}" onclick="openModal('${p.img}')">
+            <h4>${p.name}</h4>
+            <div>
+                <span class="originalPrice">PKR ${p.original}</span>
+                <span class="price"> PKR ${p.price}</span>
+            </div>
+
+            <div class="qtyBox">
+                <input type="number" min="1" value="1" onchange="updateLiveTotal(this, ${p.price})">
+                <div class="price">Total: PKR ${p.price}</div>
+
+                <button class="btn addBtn" onclick="addToCart('${category}', ${i}, this)">Add To Cart</button>
+                <button class="btn buyBtn" onclick="buyNow('${category}', ${i}, this)">Buy Now</button>
+                
+  
+            </div>
+        </div>`;
+    });
+}
+
+async function shareProduct(category, index, name, price, img) {
+    const cleanName = name.replace(/<[^>]*>?/gm, '');
+    const baseUrl = 'https://safazzzz.github.io/.comm/product.html';
+    
+    // Pass the actual product image URL in the link
+    const productUrl = `${baseUrl}?img=${encodeURIComponent(img)}&cat=${category}&idx=${index}`;
+    
+    const shareData = {
+        title: 'Safa\'z Product',
+        text: `Check out this amazing product: ${cleanName} for only PKR ${price}!`,
+        url: productUrl
+    };
+
+    if (navigator.share) {
+        try {
+            await navigator.share(shareData);
+        } catch (err) {
+            console.log('Error sharing:', err);
+        }
+    } else {
+        try {
+            await navigator.clipboard.writeText(productUrl);
+            alert('Product link copied to clipboard!');
+        } catch (err) {
+            alert('Failed to copy text.');
+        }
+    }
+}
+window.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const img = urlParams.get('img');
+    
+    // Update OG image dynamically (only works for browsers, not bots)
+    if (img) {
+        const ogImage = document.querySelector('meta[property="og:image"]');
+        if (ogImage) ogImage.setAttribute('content', img);
+    }
+    
+    // Highlight the product
+    const index = urlParams.get('idx');
+    if (index) {
+        const productCards = document.querySelectorAll('.productCard');
+        if (productCards[index]) {
+            productCards[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
+            productCards[index].style.border = '3px solid #007bff';
+            productCards[index].style.boxShadow = '0 0 15px rgba(0,123,255,0.6)';
+        }
+    }
+});
+    
+// Helper Functions
+function updateLiveTotal(input, price) {
+    input.parentElement.querySelector('.price').innerText = "Total: PKR " + (input.value * price);
+}
+function addToCart(cat, idx, btn) { 
+    btn.innerText = "Added!"; 
+    setTimeout(() => btn.innerText = "Add To Cart", 1000); 
+}
+function buyNow(cat, idx, btn) { alert("Proceeding to checkout..."); }
+function openModal(img) { alert("Opening modal for " + img); }
+
+// Initialize First Category
+showProducts('faceShiner', document.querySelector('.categoryItem'));
+</script>
+
+<!-- Add this to your product.html page (at the bottom before </body>) -->
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get('cat');
+    const index = urlParams.get('idx');
+
+    if (category && index) {
+        const productCards = document.querySelectorAll('.productCard');
+        if (productCards[index]) {
+            productCards[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Highlight the product
+            productCards[index].style.border = '3px solid #007bff';
+            productCards[index].style.boxShadow = '0 0 15px rgba(0,123,255,0.6)';
+            productCards[index].style.transform = 'scale(1.02)';
+            productCards[index].style.transition = 'all 0.3s ease';
+            
+            // Remove highlight after 5 seconds
+            setTimeout(() => {
+                productCards[index].style.border = '1px solid #eee';
+                productCards[index].style.boxShadow = '0 2px 5px rgba(0,0,0,0.05)';
+                productCards[index].style.transform = 'scale(1)';
+            }, 5000);
+        }
+    }
+});
+
+// Placeholder functions for your existing logic
+function updateLiveTotal(input, price) {
+    input.parentElement.querySelector('.price').innerText = "Total: PKR " + (input.value * price);
+}
+function addToCart(cat, idx, btn) { btn.innerText = "Added!"; setTimeout(()=>btn.innerText="Add To Cart", 1000); }
+function buyNow(cat, idx, btn) { alert("Proceeding to checkout..."); }
+function openModal(img) { alert("Opening modal for " + img); }
+
+// Initialize
+showProducts('faceShiner', document.querySelector('.categoryItem'));
+
+function updateLiveTotal(input,price){
+let total=input.value*price;
+input.nextElementSibling.innerText="Total: PKR "+total;
+}
+
+function addToCart(category,index,btn){
+let card=btn.closest('.productCard');
+let qty=parseInt(card.querySelector('input').value);
+let product=products[category][index];
+
+let existing=cart.find(i=>i.name===product.name);
+if(existing){
+existing.qty+=qty;
+}else{
+cart.push({...product,qty});
+}
+updateCart();
+}
+
+function buyNow(category,index,btn){
+addToCart(category,index,btn);
+openCart();
+}
+
+function updateCart(){
+document.getElementById('cartCount').innerText=
+cart.reduce((a,b)=>a+b.qty,0);
+
+let cartItems=document.getElementById('cartItems');
+cartItems.innerHTML='';
+let total=0;
+
+cart.forEach((item,index)=>{
+let itemTotal=item.qty*item.price;
+total+=itemTotal;
+
+cartItems.innerHTML+=`
+<div class="cartItemRow">
+<span class="deleteBtn" onclick="removeItem(${index})">🗑</span>
+<strong>${item.name}</strong><br>
+Qty: ${item.qty} × PKR ${item.price}<br>
+Total: PKR ${itemTotal}
+</div>`;
+});
+
+document.getElementById('cartTotal').innerText="Total: PKR "+total;
+}
+
+function removeItem(index){
+cart.splice(index,1);
+updateCart();
+}
+
+function openCart(){
+document.getElementById('cartPopup').style.display='flex';
+}
+
+function closeCart(){
+document.getElementById('cartPopup').style.display='none';
+}
+
+function outsideClose(e){
+if(e.target.id==="cartPopup"){closeCart();}
+}
+
+function openModal(img){
+document.getElementById('modalImage').src=img;
+document.getElementById('imageModal').style.display='flex';
+}
+
+function closeModal(){
+document.getElementById('imageModal').style.display='none';
+}
+
+window.onload=function(){
+showProducts('faceShiner',document.querySelector('.categoryItem'));
+};
+// OPEN CHECKOUT
+function openCheckout(){
+  if(cart.length===0){
+    alert("Your cart is empty!");
+    return;
+  }
+
+  let summaryHTML="";
+  let total=0;
+
+  cart.forEach(item=>{
+    let itemTotal=item.qty*item.price;
+    total+=itemTotal;
+    summaryHTML+=`
+    <div>
+      ${item.name}<br>
+      Qty: ${item.qty} × PKR ${item.price}<br>
+      Item Total: PKR ${itemTotal}
+      <hr>
+    </div>`;
+  });
+
+  summaryHTML+=`<strong>Grand Total: PKR ${total}</strong>`;
+
+  document.getElementById("orderSummary").innerHTML=summaryHTML;
+  document.getElementById("checkoutPopup").style.display="flex";
+}
+
+// Show thank you message after 2 seconds
+    setTimeout(() => {
+        let customerName = document.getElementById("custName").value.trim();
+        showThankYou(customerName); // Call the function to show the thank you message
+    }, 2000); // 2000 milliseconds = 2 seconds
+
+
+// Close if user clicks outside the box
+document.getElementById("checkoutPopup").addEventListener("click", function(e){
+  if(e.target === this){
+    closeCheckout();
+  }
+});
+
+// Close with ESC key
+document.addEventListener("keydown", function(e){
+  if(e.key === "Escape"){
+    closeCheckout();
+  }
+});
+// CLOSE CHECKOUT
+function closeCheckout(){
+  document.getElementById("checkoutPopup").style.display="none";
+}
+
+// GENERATE UNIQUE ORDER NUMBER
+function generateOrderNumber(){
+  return "ZUL" + Date.now().toString().slice(-6);
+}
+
+
+// SEND TO WHATSAPP
+function sendToWhatsApp(){
+
+  let name=document.getElementById("custName").value.trim();
+  let phone=document.getElementById("custPhone").value.trim();
+  let city=document.getElementById("custCity").value.trim();
+  let address=document.getElementById("custAddress").value.trim();
+  let payment=document.getElementById("paymentMethod").value;
+
+  if(!name || !phone || !city || !address || !payment){
+    alert("Please fill all fields!");
+    return;
+  }
+
+
+  let orderNumber=generateOrderNumber();
+  
+  let total=0;
+  let itemsText="";
+
+  cart.forEach(item=>{
+    let itemTotal=item.qty*item.price;
+    total+=itemTotal;
+
+    itemsText+=`
+• ${item.name}
+  Qty: ${item.qty}
+  Price: PKR ${item.price}
+  Item Total: PKR ${itemTotal}
+`;
+  });
+
+  let message=`
+🛍️ *NEW ORDER RECEIVED*
+-------------------------
+Order No: ${orderNumber}
+
+Items:
+${itemsText}
+
+Total Amount: PKR ${total}
+
+Customer Details:
+Name: ${name}
+Phone: ${phone}
+City: ${city}
+Address: ${address}
+Payment Method: ${payment}
+
+Thank you for choosing Zulhat 🌸
+`;
+
+// Show thank you message after 2 seconds
+    setTimeout(() => {
+        let customerName = document.getElementById("custName").value.trim();
+        showThankYou(customerName); // Call the function to show the thank you message
+    }, 2000); // 2000 milliseconds = 2 seconds
+function showThankYou() {
+    // Get the customer's name from the input field
+    const name = document.getElementById("custName").value.trim();
+
+    // Display the thank you message
+    document.getElementById("thankYouMessage").innerHTML =
+        "Thank you <strong>" + name + "</strong> for shopping with  Zulhat<br><br>Our team will process your order shortly.";
+
+    // Show the thank you popup
+    document.getElementById("thankYouPopup").style.display = "flex"; 
+    document.body.style.overflow = "hidden"; // Prevent background scrolling
+}
+
+// Close Thank You Popup function
+function closeThankYou() {
+    const popup = document.getElementById("thankYouPopup");
+    if (!popup) return;
+
+    popup.style.display = "none";          // Hide the popup
+    document.body.style.overflow = "auto"; // Restore background scrolling
+
+    // Refresh the page
+    location.reload();
+}
+
+// Optional: Close popup if user clicks outside the box
+window.addEventListener("click", function(e) {
+    const popup = document.getElementById("thankYouPopup");
+    if (!popup) return;
+
+    // If the click is on the overlay (outside the inner box)
+    if (e.target === popup) {
+        closeThankYou();
+    }
+});
+
+// For Safa
+let safaPhone = "+923498101583"; // Update this number if needed
+let safaWhatsAppURL = "https://wa.me/" + safaPhone + "?text=" + encodeURIComponent(message);
+window.open(safaWhatsAppURL, "_blank");
+
+// For Feroz
+let ferozPhone = "+923498101583"; // Update this number if needed
+let ferozWhatsAppURL = "https://wa.me/" + ferozPhone + "?text=" + encodeURIComponent(message);
+window.open(ferozWhatsAppURL, "_blank");
+
+
+  
+// Close Thank You
+function closeThankYou(){
+  document.getElementById("thankYouPopup").style.display = "none";
+  document.body.style.overflow="auto";
+
+  // Clear cart after confirmation
+  cart = [];
+  updateCart();
+  closeCheckout();
+}
+  cart=[];
+  updateCart();
+  closeCheckout();
+}
+function buyNow(category,index,btn){
+  addToCart(category,index,btn);
+  openCheckout();
+}
+
+</script>
+
+
+
+    >
+
+
+    
+       <!-- Newsletter Start -->
+<div class="container-fluid newsletter py-5 my-5" style="background-color: black;">
+    <div class="container py-5">
+        <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h1 class="mb-3" style="color: gold;">
+                <span class="fw-light" style="color: gold;">Let's Subscribe</span> The Newsletter
+            </h1>
+            <p class="mb-4" style="color: gold;">Subscribe now to get 30% discount on any of our Outfit</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-7 wow fadeIn" data-wow-delay="0.5s">
+                <div class="position-relative w-100 mt-3 mb-2">
+                    <input class="form-control w-100 py-4 ps-4 pe-5" type="text" placeholder="Enter Your Email"
+                        style="height: 48px; background-color: black; color: gold; border: 1px solid gold;">
+                    <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2" style="background-color: gold; color: black; border: 1px solid gold;">
+                        <i class="fa fa-paper-plane fs-4" style="color: black;"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Newsletter End -->
+
+    
+    <!-- Footer Start -->
+<div class="container-fluid footer" style="background-color: black;">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                <a href="index.html" class="d-inline-block mb-3">
+                    <h1 class="text-gold" style="text-align: justify; color: gold;">ZULHAT</h1>
+                </a>
+                <p class="mb-0" style="color: gold; text-align: justify;">
+                    Upgrade your everyday style with the ZULHAT Polo Shirt, designed for those who value elegance and comfort. Crafted with soft, breathable fabric and a modern tailored fit, this polo delivers a refined look perfect for casual outings, workdays, or special occasions.
+                </p>
+            </div>
+
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                <h5 class="mb-4" style="color: gold; text-align: justify;">Get In Touch</h5>
+
+                <p style="color: gold; text-align: justify;">
+                    <i class="fa fa-map-marker-alt me-3" style="color: gold;"></i>Mirpur AJK
+                </p>
+                <p style="color: gold; text-align: justify;">
+                    <i class="fa fa-phone-alt me-3" style="color: gold;"></i>03116101583
+                </p>
+                <p style="color: gold; text-align: justify;">
+                    <i class="fa fa-envelope me-3" style="color: gold;"></i>zulhat2024@gmail.com
+                </p>
+
+                <div class="d-flex pt-2">
+                    <a class="btn btn-square me-1" href="" style="color: gold; border: 1px solid gold;">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="btn btn-square me-1" href="" style="color: gold; border: 1px solid gold;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="btn btn-square me-1" href="" style="color: gold; border: 1px solid gold;">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="btn btn-square me-1" href="" style="color: gold; border: 1px solid gold;">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                <h5 class="mb-4" style="color: gold; text-align: justify;">Our Products</h5>
+
+                <a class="btn btn-link" href="" style="color: gold; text-align: justify; display: block;">The Midnight Infinite (Black)</a>
+                <a class="btn btn-link" href="" style="color: gold; text-align: justify; display: block;">The Ivory Koel (Cream)</a>
+                <a class="btn btn-link" href="" style="color: gold; text-align: justify; display: block;">The Deep Indus (Navy Blue)</a>
+                <a class="btn btn-link" href="" style="color: gold; text-align: justify; display: block;">The Valley Pearl (White)</a>
+            </div>
+
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                <h5 class="mb-4" style="color: gold; text-align: justify;">Popular Link</h5>
+
+                <a class="btn btn-link" href="" style="color: gold; text-align: justify; display: block;">About Us</a>
+                <a class="btn btn-link" href="" style="color: gold; text-align: justify; display: block;">Contact Us</a>
+                <a class="btn btn-link" href="" style="color: gold; text-align: justify; display: block;">Privacy Policy</a>
+                <a class="btn btn-link" href="" style="color: gold; text-align: justify; display: block;">Terms & Condition</a>
+                <a class="btn btn-link" href="" style="color: gold; text-align: justify; display: block;">Career</a>
+            </div>
+        </div>
+
+        <div class="container wow fadeIn" data-wow-delay="0.1s">
+            <div class="copyright" style="border-top: 1px solid gold; padding-top: 15px;">
+                <div class="row">
+                    
+                    <div class="col-md-6 text-center text-md-end" style="background-color: black;">
+    
+        <a href="" style="color: gold;">Home</a>
+        <span style="color: gold;"> | </span>
+        <a href="" style="color: gold;">Cookies</a>
+        <span style="color: gold;"> | </span>
+        <a href="" style="color: gold;">Help</a>
+        <span style="color: gold;"> | </span>
+        <a href="" style="color: gold;">FAQs</a>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Footer End -->
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top">
+    <i class="bi bi-arrow-up"></i>
+</a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+</body>
+</html>
